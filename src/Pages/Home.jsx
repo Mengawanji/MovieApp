@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Subheader from "../components/Subheader/Subheader";
 import { getPopularMovies } from "../Utils/api";
 import "../styles/Home.css";
+import FeaturedMovie from "../components/FeaturedMovie/FeaturedMovie";
 
 
 function Home() {
@@ -28,6 +29,8 @@ function Home() {
   }, []);
 
   return (
+    <>
+    <FeaturedMovie/>
     <div className="home">
         <Subheader title="Latest & Trending"/>
         {error && <div className="error-message">{error}</div>}
@@ -41,8 +44,8 @@ function Home() {
           ))}
         </div>
       )}
-     
     </div>
+    </>
     
   );
 }

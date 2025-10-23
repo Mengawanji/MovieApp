@@ -3,7 +3,18 @@
   width: 100%;
   box-sizing: border-box;
 }
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* or whatever height you prefer */
+  padding: 20px;
+}
 
+.centered-content {
+  width: 100%;
+  max-width: 1200px; /* optional */
+}
 .search-form {
   max-width: 600px;
   margin: 0 auto 2rem;
