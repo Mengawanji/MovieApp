@@ -1,6 +1,7 @@
 import MovieCard from "../components/MovieCard/MovieCard";
 import { useState, useEffect } from "react";
-import { searchMovies, getPopularMovies } from "../Utils/api";
+import Subheader from "../components/Subheader/Subheader";
+import { getPopularMovies } from "../Utils/api";
 import "../styles/Home.css";
 
 
@@ -14,7 +15,7 @@ function Home() {
     const loadPopularMovies = async () => {
       try {
         const popularMovies = await getPopularMovies();
-        setMovies(popularMovies);
+        setMovies(popularMovies.slice(0, 5));
       } catch (err) {
         console.log(err);
         setError("Failed to load movies...");
@@ -26,26 +27,9 @@ function Home() {
     loadPopularMovies();
   }, []);
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    if (!searchQuery.trim()) return
-    if (loading) return
-
-    setLoading(true)
-    try {
-        const searchResults = await searchMovies(searchQuery)
-        setMovies(searchResults)
-        setError(null)
-    } catch (err) {
-        console.log(err)
-        setError("Failed to search movies...")
-    } finally {
-        setLoading(false)
-    }
-  };
-
   return (
     <div className="home">
+        <Subheader title="Latest & Trending"/>
         {error && <div className="error-message">{error}</div>}
 
       {loading ? (
@@ -57,7 +41,9 @@ function Home() {
           ))}
         </div>
       )}
+     
     </div>
+    
   );
 }
 

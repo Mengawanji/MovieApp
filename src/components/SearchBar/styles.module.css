@@ -33,9 +33,8 @@
 }
 
 .searchBar:focus {
-  outline: none;
-  border-color: #e50914;
-  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  outline: none; 
 }
 
 
@@ -56,4 +55,9 @@
 .searchButton:hover {
   color: #e50914;
   outline: none;
+}
+
+.searchButton:focus {
+  border: none;
+  outline: none; 
 }

@@ -1,0 +1,17 @@
+.section-title {
+  font-size: 28px;
+  margin: 60px 0 30px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #e50914;
+}
