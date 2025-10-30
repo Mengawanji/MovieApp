@@ -44,6 +44,7 @@ function Home() {
           ))}
         </div>
       )}
+        <Subheader title="Top Searches"/>
     </div>
     </>
     

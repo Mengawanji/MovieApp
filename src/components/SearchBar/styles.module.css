@@ -1,8 +1,8 @@
-
 .searchForm {
   display: flex;
   margin: 20px 0;
   width: 100%;
+  max-width: 100%;
 }
 
 .search-input {
@@ -14,9 +14,11 @@
   outline: none;
   background: none;
   color: aliceblue;
+  flex: 1;
+  min-width: 0;
 }
 
- .searchBar {
+.searchBar {
   display: flex;
   width: 100%;
   height: 46px; 
@@ -37,19 +39,21 @@
   outline: none; 
 }
 
-
 .search-input::placeholder {
   color: rgba(255, 255, 255, 0.6); 
   opacity: 1; 
   font-weight: 300;
 }
-.searchButton{
+
+.searchButton {
   color: #fff;
   border: none;
   cursor: pointer;
   outline: none;
   background: none;
   font-size: 1.2rem;
+  padding: 0 15px;
+  flex-shrink: 0;
 }
 
 .searchButton:hover {
@@ -60,4 +64,84 @@
 .searchButton:focus {
   border: none;
   outline: none; 
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .searchForm {
+    margin: 15px 0;
+  }
+  
+  .search-input {
+    font-size: 1rem;
+    width: 200px;
+  }
+  
+  .searchBar {
+    height: 42px;
+    padding-left: 12px;
+    font-size: 14px;
+  }
+  
+  .searchButton {
+    font-size: 1rem;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchForm {
+    margin: 10px 0;
+  }
+  
+  .search-input {
+    font-size: 0.9rem;
+    width: auto;
+    min-width: 120px;
+  }
+  
+  .searchBar {
+    height: 40px;
+    padding-left: 10px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+  
+  .searchButton {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+  
+  .search-input::placeholder {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-input {
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+  
+  .searchBar {
+    height: 38px;
+    padding-left: 8px;
+  }
+  
+  .searchButton {
+    font-size: 0.8rem;
+    padding: 0 8px;
+  }
+  
+  .search-input::placeholder {
+    font-size: 0.8rem;
+  }
+}
+
+/* For very large screens */
+@media (min-width: 1200px) {
+  .searchBar {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }
