@@ -1,0 +1,165 @@
+.featured-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.featured-movie {
+  margin: 0 auto;
+  max-width: 600px;
+  align-items: center; 
+}
+
+.movie-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #fff;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.cbfc-rating {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 30px;
+  border: 1px solid white;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.movie-genres {
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+.movie-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  text-align: center;
+  color: #fff;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #fff;
+  color: rgb(0, 0, 0);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: rgb(22, 1, 1, 1);
+  color: white;
+  border: 0.3px solid rgb(102, 102, 102);
+  font-size: 20px;
+}
+
+.btn-secondary:hover {
+  background: transparent;
+  border: 0.3px solid rgb(102, 102, 102);
+}
+
+
+/* Tablets */
+@media (max-width: 768px) {
+  .movie-title {
+    font-size: 36px;
+  }
+
+  .movie-description {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .btn{
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+
+  .cbfc-rating {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .featured-container {
+    padding: 10px;
+  }
+
+  .movie-title {
+    font-size: 28px;
+  }
+
+  .movie-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .movie-description {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .movie-actions {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+}
