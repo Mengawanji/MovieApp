@@ -3,6 +3,8 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .featured-movie {
@@ -14,6 +16,7 @@
 .movie-title {
   font-size: 48px;
   font-weight: bold;
+  color: #fff;
   margin-bottom: 10px;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -25,10 +28,12 @@
   align-items: center;
   margin-bottom: 20px;
   color: #fff;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .cbfc-rating {
-  background: rgb(0, 0, 0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   color: #fff;
   padding: 3px 8px;
   border-radius: 30px;
@@ -56,6 +61,20 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
 }
 
 .btn {
@@ -73,12 +92,12 @@
 }
 
 .btn-primary:hover {
-  background: rgb(0, 0, 0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   color: #fff;
 }
 
 .btn-secondary {
-  background: rgb(22, 1, 1,1);
+  background: rgb(22, 1, 1, 1);
   color: white;
   border: 0.3px solid rgb(102, 102, 102);
   font-size: 20px;
@@ -89,136 +108,58 @@
   border: 0.3px solid rgb(102, 102, 102);
 }
 
-/* Tablet Responsive Styles */
+
+/* Tablets */
 @media (max-width: 768px) {
-  .featured-container {
-    padding: 15px;
-  }
-  
-  .featured-movie {
-    max-width: 500px;
-  }
-  
   .movie-title {
     font-size: 36px;
   }
-  
-  .movie-info {
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .cbfc-rating {
-    margin-right: 0;
-    font-size: 16px;
-  }
-  
-  .movie-genres {
-    font-size: 14px;
-    text-align: center;
-  }
-  
+
   .movie-description {
     font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 25px;
+    padding: 0 10px;
   }
-  
-  .movie-actions {
-    gap: 15px;
-  }
-  
-  .btn {
-    padding: 10px 25px;
-    font-size: 20px;
-  }
-  
-  .btn-secondary {
+
+  .btn{
     font-size: 18px;
+    padding: 10px 25px;
+  }
+
+  .cbfc-rating {
+    font-size: 16px;
+    margin-right: 10px;
   }
 }
 
-/* Mobile Responsive Styles */
+/* Mobile Phones */
 @media (max-width: 480px) {
   .featured-container {
     padding: 10px;
   }
-  
-  .featured-movie {
-    max-width: 100%;
-  }
-  
+
   .movie-title {
     font-size: 28px;
-    margin-bottom: 8px;
   }
-  
+
   .movie-info {
-    margin-bottom: 12px;
+    flex-direction: column;
+    gap: 5px;
   }
-  
-  .cbfc-rating {
-    font-size: 14px;
-    padding: 2px 6px;
-  }
-  
-  .movie-genres {
-    font-size: 13px;
-  }
-  
+
   .movie-description {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.4;
-    margin-bottom: 20px;
   }
-  
+
+  .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
   .movie-actions {
     flex-direction: column;
-    gap: 12px;
-    align-items: center;
-  }
-  
-  .btn {
-    padding: 8px 20px;
-    font-size: 18px;
-    width: 200px;
-    max-width: 100%;
-  }
-  
-  .btn-secondary {
-    font-size: 16px;
-  }
-}
-
-/* Small Mobile Devices */
-@media (max-width: 320px) {
-  .movie-title {
-    font-size: 24px;
-  }
-  
-  .movie-description {
-    font-size: 13px;
-  }
-  
-  .btn {
-    padding: 6px 15px;
-    font-size: 16px;
-    width: 180px;
-  }
-}
-
-/* Large Screens */
-@media (min-width: 1200px) {
-  .featured-movie {
-    max-width: 800px;
-  }
-  
-  .movie-title {
-    font-size: 56px;
-  }
-  
-  .movie-description {
-    font-size: 20px;
+    gap: 15px;
+    width: 100%;
   }
 }

@@ -1,26 +1,47 @@
 import styles from "./styles.module.css";
 import { CirclePlay, CircleChevronRight} from "lucide-react";
-function FeaturedMovie() {
+import { useMovieContext } from "../../contexts/MovieContext"
+
+
+function FeaturedMovie({movie}) {
+
+    const displayOverview = `${movie?.overview}`
+
+    function limitOverviewByWords(text, maxWords) {
+        if (!text || text.trim() === '') {
+            return '';
+        }
+        const words = text.split(/\s+/).filter(Boolean);
+
+        if (words.length <= maxWords) {
+            return text;
+        }
+        const truncatedWords = words.slice(0, maxWords);
+
+        return truncatedWords.join(' ') + ' . . .';
+    }
+
+    const movieOverview =  limitOverviewByWords(displayOverview, 30)
+
     return (
         <div className={styles["featured-container"]}>
         <div className={styles["featured-movie"]}>
             <h1 className={styles["movie-title"]}>
-                <img src="src/assets/Spiderman.png"/> 
+                {movie?.original_title?.toUpperCase()}
             </h1>
             <div className={styles["movie-info"]}>
-                <div className={styles["cbfc-rating"]}>CBFC:U/A</div>
-                <div className={styles["movie-genres"]}>Action • Adventure • 2h 28m</div>
+                <div className={styles["cbfc-rating"]}>Language : {movie?.original_language} </div>
+                <div className={styles["movie-genres"]}> Vote : {movie?.vote_count}</div>
             </div>
             <p className={styles["movie-description"]}>
-                When a spell goes wrong, dangerous foes from other worlds start to appear, 
-                forcing Peter to discover what it truly means to be Spider-Man.
+                {movieOverview}
             </p>
             <div className={styles["movie-actions"]}>
-                <button className={styles["btn"] + " " + styles["btn-primary"]}> 
+                <button className={styles["button"] + " " + styles["btn-primary"]}> 
                     <CirclePlay size={20}/> Watch Now
                 </button>
 
-                <button className={styles["btn"] + " " + styles["btn-secondary"]}>
+                <button className={styles["button"] + " " + styles["btn-secondary"]}>
                      <CircleChevronRight size={20}/> More Info
                 </button>
             </div> 

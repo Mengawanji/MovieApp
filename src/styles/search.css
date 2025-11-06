@@ -1,19 +1,41 @@
-.home {
+.searchPage {
   padding: 2rem 0;
   width: 100%;
   box-sizing: border-box;
 }
-.home-container {
+.searchPage p{
+  font-size: 26px;
+  color: #fff;
+}
+.searchPage-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100vh; /* or whatever height you prefer */
   padding: 20px;
+}
+
+.title {
+  font-size: 28px;
+  margin: 60px 0 30px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: #e50914;
 }
 
 .centered-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px; /* optional */
 }
 .search-form {
   max-width: 600px;
@@ -55,7 +77,7 @@
 
 
 @media (max-width: 639px) {
-  .home {
+  .searchPage {
     padding: 1rem 0;
   }
 

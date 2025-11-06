@@ -30,7 +30,7 @@ function Home() {
 
   return (
     <>
-    <FeaturedMovie/>
+    <FeaturedMovie movie={movies[0]}/>
     <div className="home">
         <Subheader title="Latest & Trending"/>
         {error && <div className="error-message">{error}</div>}
@@ -44,7 +44,6 @@ function Home() {
           ))}
         </div>
       )}
-        <Subheader title="Top Searches"/>
     </div>
     </>
     
