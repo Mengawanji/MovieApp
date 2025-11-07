@@ -42,7 +42,7 @@ export default function Search() {
       {loading && <p>Loading...</p>}
       {error && <p className="error-message">{error}</p>}
       {!loading && !error && movies.length === 0 && (
-        <p>No movies found for {query}.</p>
+        <p>No movies found for.</p>
       )}
 
       <div className="movies-grid">

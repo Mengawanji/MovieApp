@@ -39,3 +39,21 @@ export const topRated = async () => {
   const data = await response.json();
   return data.results;
 };
+
+export const movieGenre = async (ID) => {
+  const response = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${ID}`);
+  const data = await response.json();
+  return data.results;
+};
+
+
+
+
+
+// comedy 38
+// action 18
+// romance 10749
+
+// https://api.themoviedb.org/3/discover/movie?api_key=9c5638ce75e1fb11e4073a6411597f6d&with_genres=28
+
+// https://api.themoviedb.org/3/discover/movie?api_key=YOUR_API_KEY&with_genres=35

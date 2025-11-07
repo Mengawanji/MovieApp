@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  flex-wrap: wrap;
+  padding: 100px;
+  height: 80vh;
   text-align: center;
 }
 
