@@ -1,10 +1,9 @@
-// src/pages/SearchPage/SearchPage.jsx
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { searchMovies } from "../Utils/api";
 import Subheader from "../components/Subheader/Subheader";
 import MovieCard from "../components/MovieCard/MovieCard";
-import "../styles/Home.css";
+import "../styles/search.css";
 
 export default function Search() {
   const [movies, setMovies] = useState([]);
@@ -42,7 +41,7 @@ export default function Search() {
       {loading && <p>Loading...</p>}
       {error && <p className="error-message">{error}</p>}
       {!loading && !error && movies.length === 0 && (
-        <p>No movies found for {query}.</p>
+        <p>No movies found for.</p>
       )}
 
       <div className="movies-grid">
