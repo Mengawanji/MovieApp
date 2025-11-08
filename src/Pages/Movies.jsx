@@ -1,47 +1,10 @@
-import MovieCard from "../components/MovieCard/MovieCard";
-import { useState, useEffect } from "react";
-import Subheader from "../components/Subheader/Subheader";
-import { MoviePlay } from "../Utils/api";
-import "../styles/Home.css";
-
+import PageDisplay from "../components/Category/PageDisplay";
 
 export default function Movie() {
-  const [movies, setMovies] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const playNow = async () => {
-      try {
-        const currentMovies = await MoviePlay();
-        setMovies(currentMovies);
-      } catch (err) {
-        console.log(err);
-        setError("Failed to load movies...");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    playNow();
-  }, []);
 
   return (
     <>
-    <div className="home">
-        <Subheader title="Current Movies"/>
-        {error && <div className="error-message">{error}</div>}
-
-      {loading ? (
-        <div className="loading">Loading...</div>
-      ) : (
-        <div className="movies-grid">
-          {movies.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))}
-        </div>
-      )}
-    </div>
+        <PageDisplay DES={"movie/now_playing"} subtitle={"Now Playing"}/>
     </>
     
   );

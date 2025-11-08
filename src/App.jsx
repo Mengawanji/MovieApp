@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Favorites from './components/Favorites/Favorites';
 import Home from './Pages/Home';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 import Search from './Pages/Search';
 import Series from './Pages/Series';
 import Movie from './Pages/Movies';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/search" element={<Search />} />
         </Routes>
       </main>
+      <Footer />
     </MovieProvider>
   );
 }

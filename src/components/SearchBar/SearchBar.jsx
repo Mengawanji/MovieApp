@@ -23,12 +23,19 @@ export default function SearchBar() {
     return () => clearTimeout(delayDebounce);
   }, [searchQuery, navigate, location.pathname]);
 
+  useEffect(() => {
+  // If the user navigates away from the search page, reset the input
+  if (!location.pathname.startsWith("/search")) {
+    setSearchQuery("");
+  }
+}, [location.pathname]);
+
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
       className={styles.searchForm}
     >
-      <div className={styles.searchBar}>
+      <div className={styles["search-bar"]}>
         <input
           type="text"
           placeholder="Search for Movies, Series..."

@@ -1,19 +1,19 @@
 import MovieCard from "../MovieCard/MovieCard";
 import { useState, useEffect } from "react";
-import { movieGenre } from "../../Utils/api";
+import { getMovie } from "../../Utils/api";
 import Subheader from "../Subheader/Subheader";
 import "../../styles/Home.css";
 
-export default function Genre({ID, subtitle}) {
+export default function DisplayMovie({DES, subtitle}) {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const loadGenreMovies = async () => {
+    const loadMovies = async () => {
       try {
-        const getGenreMovies = await movieGenre(ID);
-        setMovies(getGenreMovies.slice(0, 5));
+        const getDisplayMovies = await getMovie(DES);
+        setMovies(getDisplayMovies.slice(0, 5));
       } catch (err) {
         console.log(err);
         setError("Failed to load movies...");
@@ -22,7 +22,7 @@ export default function Genre({ID, subtitle}) {
       }
     };
 
-    loadGenreMovies();
+    loadMovies();
   }, []);
 
   return (
